@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GArocery Store — Fresh Groceries Delivered</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== Loading Screen ===== -->
+<div id="loading-screen">
+  <div class="loader-logo">GA<span>rocery</span> Store</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">🛒</div>
+      GA<span>rocery</span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <input type="text" placeholder="Search groceries…" id="nav-search" />
+        <button onclick="navSearch()">🔍</button>
+      </div>
+      <a href="cart.html" class="cart-btn">
+        🛒 Cart
+        <span class="cart-count">0</span>
+      </a>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="products.html">🛍️ Products</a>
+    <a href="categories.html">📦 Categories</a>
+    <a href="about.html">ℹ️ About Us</a>
+    <a href="contact.html">📩 Contact</a>
+  </div>
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <div class="hero-content container">
+    <div class="hero-text">
+      <div class="hero-tag">🌿 100% Fresh & Organic</div>
+      <h1>Get <span class="highlight">Fresh</span> Groceries<br>Delivered Fast</h1>
+      <p>Shop thousands of fresh fruits, vegetables, dairy, and more — all sourced from local farms and delivered to your door.</p>
+      <div class="hero-actions">
+        <a href="products.html" class="btn btn-white">🛍️ Shop Now</a>
+        <a href="categories.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.6);color:#fff">Browse Categories</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>500+</strong><span>Products</span></div>
+        <div class="hero-stat"><strong>10k+</strong><span>Happy Customers</span></div>
+        <div class="hero-stat"><strong>30 min</strong><span>Delivery</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-basket">🧺</div>
+      <div class="hero-bubble top-left">🍎 Fresh Fruits</div>
+      <div class="hero-bubble top-right">🥦 Organic Veggies</div>
+      <div class="hero-bubble bot-left">⚡ Fast Delivery</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATEGORY STRIP ===== -->
+<div class="categories-strip">
+  <div class="container">
+    <div class="cat-strip-grid">
+      <button class="cat-chip active" data-cat="all"><span class="icon">✨</span>All Items</button>
+      <button class="cat-chip" data-cat="Fruits"><span class="icon">🍎</span>Fruits</button>
+      <button class="cat-chip" data-cat="Vegetables"><span class="icon">🥦</span>Vegetables</button>
+      <button class="cat-chip" data-cat="Dairy"><span class="icon">🥛</span>Dairy</button>
+      <button class="cat-chip" data-cat="Snacks"><span class="icon">🍫</span>Snacks</button>
+      <button class="cat-chip" data-cat="Beverages"><span class="icon">🧃</span>Beverages</button>
+      <button class="cat-chip" data-cat="Bakery"><span class="icon">🍞</span>Bakery</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FEATURED PRODUCTS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag">⭐ Top Picks</div>
+      <h2>Featured Products</h2>
+      <p>Hand-picked fresh items loved by thousands of customers</p>
+    </div>
+    <div class="products-grid" id="featured-grid">
+      <!-- JS renders product cards here -->
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="products.html" class="btn btn-primary">View All Products →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFFER BANNER ===== -->
+<section class="section-sm">
+  <div class="container">
+    <div class="offer-banner reveal">
+      <div class="offer-banner-text">
+        <div class="offer-tag">🔥 Limited Time Offer</div>
+        <h3>Up to 30% Off<br>Fresh Vegetables</h3>
+        <p>Use code <strong>FRESH10</strong> at checkout</p>
+        <a href="products.html" class="btn btn-white" style="margin-top:1rem">Grab Deal →</a>
+      </div>
+      <div class="offer-countdown">
+        <div class="countdown-block"><div class="num" id="cd-hours">00</div><div class="lbl">Hours</div></div>
+        <div class="countdown-block"><div class="num" id="cd-mins">00</div><div class="lbl">Mins</div></div>
+        <div class="countdown-block"><div class="num" id="cd-secs">00</div><div class="lbl">Secs</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag">📦 Browse By</div>
+      <h2>Shop By Category</h2>
+      <p>Find exactly what you need across our wide range of categories</p>
+    </div>
+    <div class="cat-grid">
+      <a href="categories.html#fruits" class="cat-card fruits reveal">
+        <div class="cat-card-bg">🍎</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Fruits</h4><span>24 items</span></div>
+      </a>
+      <a href="categories.html#veggies" class="cat-card veggies reveal">
+        <div class="cat-card-bg">🥦</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Vegetables</h4><span>36 items</span></div>
+      </a>
+      <a href="categories.html#dairy" class="cat-card dairy reveal">
+        <div class="cat-card-bg">🥛</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Dairy</h4><span>18 items</span></div>
+      </a>
+      <a href="categories.html#snacks" class="cat-card snacks reveal">
+        <div class="cat-card-bg">🍫</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Snacks</h4><span>30 items</span></div>
+      </a>
+      <a href="categories.html#beverages" class="cat-card beverages reveal">
+        <div class="cat-card-bg">🧃</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Beverages</h4><span>22 items</span></div>
+      </a>
+      <a href="categories.html#bakery" class="cat-card bakery reveal">
+        <div class="cat-card-bg">🍞</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Bakery</h4><span>15 items</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US STRIP ===== -->
+<section class="section-sm" style="background:var(--green-pale)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem">
+      <div class="reveal" style="text-align:center;padding:1.5rem">
+        <div style="font-size:2.5rem;margin-bottom:.5rem">🌿</div>
+        <h4 style="font-weight:700;margin-bottom:.25rem">100% Organic</h4>
+        <p style="font-size:.88rem;color:var(--text-light)">All produce directly from certified organic farms</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:1.5rem">
+        <div style="font-size:2.5rem;margin-bottom:.5rem">⚡</div>
+        <h4 style="font-weight:700;margin-bottom:.25rem">30-Min Delivery</h4>
+        <p style="font-size:.88rem;color:var(--text-light)">Lightning-fast delivery right to your doorstep</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:1.5rem">
+        <div style="font-size:2.5rem;margin-bottom:.5rem">🔒</div>
+        <h4 style="font-weight:700;margin-bottom:.25rem">Secure Payment</h4>
+        <p style="font-size:.88rem;color:var(--text-light)">Multiple safe & encrypted payment options</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:1.5rem">
+        <div style="font-size:2.5rem;margin-bottom:.5rem">🔄</div>
+        <h4 style="font-weight:700;margin-bottom:.25rem">Easy Returns</h4>
+        <p style="font-size:.88rem;color:var(--text-light)">Not satisfied? Return within 24 hours hassle-free</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag">💬 Reviews</div>
+      <h2>What Our Customers Say</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem">
+      <div class="reveal" style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:1.75rem">
+        <div style="font-size:1.2rem;color:var(--accent-gold);margin-bottom:.75rem">★★★★★</div>
+        <p style="font-size:.93rem;color:var(--text-mid);line-height:1.7;margin-bottom:1rem">"GArocery Store has changed how I shop! Everything is fresh, prices are great, and delivery is always on time."</p>
+        <div style="display:flex;align-items:center;gap:.75rem">
+          <div style="font-size:1.8rem;background:var(--green-pale);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center">👩</div>
+          <div><strong style="font-size:.9rem">Priya Sharma</strong><br><span style="font-size:.78rem;color:var(--text-light)">Mumbai</span></div>
+        </div>
+      </div>
+      <div class="reveal" style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:1.75rem">
+        <div style="font-size:1.2rem;color:var(--accent-gold);margin-bottom:.75rem">★★★★★</div>
+        <p style="font-size:.93rem;color:var(--text-mid);line-height:1.7;margin-bottom:1rem">"Amazing selection of organic products. The app makes it so easy to find what I need. Highly recommend!"</p>
+        <div style="display:flex;align-items:center;gap:.75rem">
+          <div style="font-size:1.8rem;background:var(--green-pale);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center">👨</div>
+          <div><strong style="font-size:.9rem">Rahul Verma</strong><br><span style="font-size:.78rem;color:var(--text-light)">Delhi</span></div>
+        </div>
+      </div>
+      <div class="reveal" style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:1.75rem">
+        <div style="font-size:1.2rem;color:var(--accent-gold);margin-bottom:.75rem">★★★★☆</div>
+        <p style="font-size:.93rem;color:var(--text-mid);line-height:1.7;margin-bottom:1rem">"Fresh produce, good prices, and the cart coupon saved me a lot! Will definitely keep ordering."</p>
+        <div style="display:flex;align-items:center;gap:.75rem">
+          <div style="font-size:1.8rem;background:var(--green-pale);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center">👩</div>
+          <div><strong style="font-size:.9rem">Ananya Patel</strong><br><span style="font-size:.78rem;color:var(--text-light)">Bangalore</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter">
+  <div class="container">
+    <div class="reveal">
+      <p style="font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:.4rem">📬 Stay Updated</p>
+      <h2>Subscribe & Save 10%</h2>
+      <p>Join 10,000+ subscribers and get exclusive offers, fresh arrivals & recipes.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="Enter your email address…" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div id="newsletter-msg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">🛒</div>
+          GA<span>rocery</span>
+        </a>
+        <p>Your trusted source for fresh, organic groceries. Farm to doorstep in 30 minutes or less.</p>
+        <div class="social-links">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="Twitter">🐦</a>
+          <a href="#" title="YouTube">▶️</a>
+          <a href="#" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.1);padding:1.25rem 0">
+    <div class="container footer-bottom">
+      <span>© 2025 GArocery Store. All rights reserved.</span>
+      <span>Made with 💚 for fresh food lovers</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Nav search redirect
+  function navSearch() {
+    const q = document.getElementById('nav-search').value.trim();
+    if (q) window.location.href = `products.html?q=${encodeURIComponent(q)}`;
+  }
+  document.getElementById('nav-search').addEventListener('keydown', e => {
+    if (e.key === 'Enter') navSearch();
+  });
+</script>
+</body>
+</html>

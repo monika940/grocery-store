@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — GArocery Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="loading-screen">
+  <div class="loader-logo">GA<span>rocery</span> Store</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🛒</div>GA<span>rocery</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <input type="text" placeholder="Search…" />
+        <button>🔍</button>
+      </div>
+      <a href="cart.html" class="cart-btn">🛒 Cart <span class="cart-count">0</span></a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="products.html">🛍️ Products</a>
+    <a href="categories.html">📦 Categories</a>
+    <a href="about.html">ℹ️ About Us</a>
+    <a href="contact.html">📩 Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Contact</span></div>
+    <h1>📩 Contact Us</h1>
+    <p>We're here to help — reach out anytime</p>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="container">
+  <div class="contact-layout">
+
+    <!-- Info Card -->
+    <div class="contact-info-card reveal">
+      <h3>Get in Touch</h3>
+      <p>Have questions, feedback, or need support? We'd love to hear from you. Our team responds within 24 hours.</p>
+
+      <div class="contact-detail">
+        <div class="icon">📍</div>
+        <div>
+          <strong>Our Address</strong>
+          <span>Model Town, Ludhiana, Punjab 141002, India</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="icon">📞</div>
+        <div>
+          <strong>Phone</strong>
+          <span>+91 98765 43210</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="icon">📧</div>
+        <div>
+          <strong>Email</strong>
+          <span>hello@garocerystore.com</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="icon">⏰</div>
+        <div>
+          <strong>Business Hours</strong>
+          <span>Mon – Sat: 8:00 AM – 9:00 PM<br>Sunday: 10:00 AM – 6:00 PM</span>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div style="margin-top:2rem">
+        <p style="color:rgba(255,255,255,.6);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">Follow Us</p>
+        <div class="social-links">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="Twitter">🐦</a>
+          <a href="#" title="WhatsApp">💬</a>
+          <a href="#" title="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <!-- Map placeholder -->
+      <div style="margin-top:2rem;background:rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:2rem;text-align:center;border:1px solid rgba(255,255,255,.15)">
+        <div style="font-size:2.5rem;margin-bottom:.5rem">🗺️</div>
+        <p style="font-size:.85rem;color:rgba(255,255,255,.65)">Model Town, Ludhiana<br>Punjab, India</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrap reveal">
+      <h3>Send Us a Message</h3>
+      <form id="contact-form" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c-name">Full Name *</label>
+            <input type="text" id="c-name" placeholder="Your full name" />
+            <span class="error-msg" id="c-name-err"></span>
+          </div>
+          <div class="form-group">
+            <label for="c-email">Email Address *</label>
+            <input type="email" id="c-email" placeholder="your@email.com" />
+            <span class="error-msg" id="c-email-err"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c-phone">Phone Number</label>
+            <input type="tel" id="c-phone" placeholder="10-digit number" maxlength="10" />
+            <span class="error-msg" id="c-phone-err"></span>
+          </div>
+          <div class="form-group">
+            <label for="c-subject">Subject *</label>
+            <select id="c-subject">
+              <option value="">Select a topic…</option>
+              <option>Order Issue</option>
+              <option>Product Quality</option>
+              <option>Delivery Problem</option>
+              <option>Refund Request</option>
+              <option>General Inquiry</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="c-message">Your Message *</label>
+          <textarea id="c-message" rows="5" placeholder="Tell us how we can help you…"></textarea>
+          <span class="error-msg" id="c-message-err"></span>
+        </div>
+
+        <!-- Newsletter checkbox -->
+        <div class="form-group" style="flex-direction:row;align-items:center;gap:.6rem">
+          <input type="checkbox" id="c-newsletter" style="width:16px;height:16px;accent-color:var(--green-main)" />
+          <label for="c-newsletter" style="font-size:.88rem;color:var(--text-mid);cursor:pointer">Subscribe to our newsletter for fresh deals</label>
+        </div>
+
+        <button type="submit" class="form-submit">📨 Send Message</button>
+
+        <div id="contact-success">
+          🎉 Thank you! Your message has been sent. We'll respond within 24 hours.
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag">❓ FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div style="max-width:750px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem">
+      <details class="reveal" style="background:var(--off-white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:1.1rem 1.25rem;cursor:pointer">
+        <summary style="font-weight:700;color:var(--text-dark);list-style:none;display:flex;justify-content:space-between;align-items:center">How fast is your delivery? <span>▼</span></summary>
+        <p style="margin-top:.75rem;font-size:.9rem;color:var(--text-mid)">We deliver within 30 minutes for orders placed in our service areas. For remote locations, delivery may take up to 60 minutes.</p>
+      </details>
+      <details class="reveal" style="background:var(--off-white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:1.1rem 1.25rem;cursor:pointer">
+        <summary style="font-weight:700;color:var(--text-dark);list-style:none;display:flex;justify-content:space-between;align-items:center">Is the produce really organic? <span>▼</span></summary>
+        <p style="margin-top:.75rem;font-size:.9rem;color:var(--text-mid)">Yes! All our produce is certified organic by FSSAI and sourced directly from verified farms. We lab-test every batch.</p>
+      </details>
+      <details class="reveal" style="background:var(--off-white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:1.1rem 1.25rem;cursor:pointer">
+        <summary style="font-weight:700;color:var(--text-dark);list-style:none;display:flex;justify-content:space-between;align-items:center">What is your return policy? <span>▼</span></summary>
+        <p style="margin-top:.75rem;font-size:.9rem;color:var(--text-mid)">If you're unhappy with any product, contact us within 24 hours of delivery. We offer full refunds or replacements, no questions asked.</p>
+      </details>
+      <details class="reveal" style="background:var(--off-white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:1.1rem 1.25rem;cursor:pointer">
+        <summary style="font-weight:700;color:var(--text-dark);list-style:none;display:flex;justify-content:space-between;align-items:center">Do you offer free delivery? <span>▼</span></summary>
+        <p style="margin-top:.75rem;font-size:.9rem;color:var(--text-mid)">Yes! Orders above ₹499 get free delivery. Otherwise, a flat ₹49 delivery fee applies.</p>
+      </details>
+      <details class="reveal" style="background:var(--off-white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:1.1rem 1.25rem;cursor:pointer">
+        <summary style="font-weight:700;color:var(--text-dark);list-style:none;display:flex;justify-content:space-between;align-items:center">What payment methods are accepted? <span>▼</span></summary>
+        <p style="margin-top:.75rem;font-size:.9rem;color:var(--text-mid)">We accept UPI, credit/debit cards, net banking, and cash on delivery. All digital payments are secured with SSL encryption.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><div class="logo-icon">🛒</div>GA<span>rocery</span></a>
+        <p>Fresh organic groceries. Farm to doorstep.</p>
+        <div class="social-links"><a href="#">📘</a><a href="#">📷</a><a href="#">🐦</a><a href="#">💬</a></div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="cart.html">Cart</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Support</h5><ul><li><a href="#">FAQ</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.1);padding:1.25rem 0">
+    <div class="container footer-bottom"><span>© 2025 GArocery Store. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categories — GArocery Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="loading-screen">
+  <div class="loader-logo">GA<span>rocery</span> Store</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🛒</div>GA<span>rocery</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="categories.html" class="active">Categories</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <input type="text" placeholder="Search…" />
+        <button>🔍</button>
+      </div>
+      <a href="cart.html" class="cart-btn">🛒 Cart <span class="cart-count">0</span></a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="products.html">🛍️ Products</a>
+    <a href="categories.html">📦 Categories</a>
+    <a href="about.html">ℹ️ About Us</a>
+    <a href="contact.html">📩 Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Categories</span></div>
+    <h1>📦 Product Categories</h1>
+    <p>Explore our wide range of fresh groceries sorted by category</p>
+  </div>
+</div>
+
+<!-- CATEGORIES OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag">🧭 Explore</div>
+      <h2>Browse All Categories</h2>
+      <p>Click any category to view all products in it</p>
+    </div>
+    <div class="cat-grid" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem">
+      <a href="products.html?cat=Fruits" id="fruits" class="cat-card fruits reveal" style="height:220px">
+        <div class="cat-card-bg" style="font-size:6rem">🍎</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Fruits</h4><span>24 fresh items</span></div>
+      </a>
+      <a href="products.html?cat=Vegetables" id="veggies" class="cat-card veggies reveal" style="height:220px">
+        <div class="cat-card-bg" style="font-size:6rem">🥦</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Vegetables</h4><span>36 fresh items</span></div>
+      </a>
+      <a href="products.html?cat=Dairy" id="dairy" class="cat-card dairy reveal" style="height:220px">
+        <div class="cat-card-bg" style="font-size:6rem">🥛</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Dairy & Eggs</h4><span>18 items</span></div>
+      </a>
+      <a href="products.html?cat=Snacks" id="snacks" class="cat-card snacks reveal" style="height:220px">
+        <div class="cat-card-bg" style="font-size:6rem">🍫</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Snacks</h4><span>30 items</span></div>
+      </a>
+      <a href="products.html?cat=Beverages" id="beverages" class="cat-card beverages reveal" style="height:220px">
+        <div class="cat-card-bg" style="font-size:6rem">🧃</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Beverages</h4><span>22 items</span></div>
+      </a>
+      <a href="products.html?cat=Bakery" id="bakery" class="cat-card bakery reveal" style="height:220px">
+        <div class="cat-card-bg" style="font-size:6rem">🍞</div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-info"><h4>Bakery</h4><span>15 items</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PER CATEGORY -->
+<section class="section" style="background:var(--white);padding-top:0">
+  <div class="container">
+
+    <!-- Fruits -->
+    <div style="margin-bottom:3rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;display:flex;align-items:center;gap:.5rem">🍎 Fruits</h3>
+        <a href="products.html?cat=Fruits" class="btn btn-outline" style="font-size:.85rem;padding:.4rem 1rem">View All →</a>
+      </div>
+      <div class="products-grid" id="cat-fruits-grid"></div>
+    </div>
+
+    <!-- Vegetables -->
+    <div style="margin-bottom:3rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;display:flex;align-items:center;gap:.5rem">🥦 Vegetables</h3>
+        <a href="products.html?cat=Vegetables" class="btn btn-outline" style="font-size:.85rem;padding:.4rem 1rem">View All →</a>
+      </div>
+      <div class="products-grid" id="cat-veggies-grid"></div>
+    </div>
+
+    <!-- Dairy -->
+    <div style="margin-bottom:3rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;display:flex;align-items:center;gap:.5rem">🥛 Dairy</h3>
+        <a href="products.html?cat=Dairy" class="btn btn-outline" style="font-size:.85rem;padding:.4rem 1rem">View All →</a>
+      </div>
+      <div class="products-grid" id="cat-dairy-grid"></div>
+    </div>
+
+    <!-- Snacks -->
+    <div style="margin-bottom:3rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;display:flex;align-items:center;gap:.5rem">🍫 Snacks</h3>
+        <a href="products.html?cat=Snacks" class="btn btn-outline" style="font-size:.85rem;padding:.4rem 1rem">View All →</a>
+      </div>
+      <div class="products-grid" id="cat-snacks-grid"></div>
+    </div>
+
+    <!-- Beverages -->
+    <div style="margin-bottom:3rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;display:flex;align-items:center;gap:.5rem">🧃 Beverages</h3>
+        <a href="products.html?cat=Beverages" class="btn btn-outline" style="font-size:.85rem;padding:.4rem 1rem">View All →</a>
+      </div>
+      <div class="products-grid" id="cat-bev-grid"></div>
+    </div>
+
+    <!-- Bakery -->
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;display:flex;align-items:center;gap:.5rem">🍞 Bakery</h3>
+        <a href="products.html?cat=Bakery" class="btn btn-outline" style="font-size:.85rem;padding:.4rem 1rem">View All →</a>
+      </div>
+      <div class="products-grid" id="cat-bakery-grid"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><div class="logo-icon">🛒</div>GA<span>rocery</span></a>
+        <p>Fresh organic groceries. Farm to doorstep.</p>
+        <div class="social-links"><a href="#">📘</a><a href="#">📷</a><a href="#">🐦</a></div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="cart.html">Cart</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Support</h5><ul><li><a href="#">FAQ</a></li><li><a href="#">Privacy</a></li></ul></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.1);padding:1.25rem 0">
+    <div class="container footer-bottom"><span>© 2025 GArocery Store</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Render per-category grids
+  document.addEventListener('DOMContentLoaded', () => {
+    const map = {
+      'cat-fruits-grid':  'Fruits',
+      'cat-veggies-grid': 'Vegetables',
+      'cat-dairy-grid':   'Dairy',
+      'cat-snacks-grid':  'Snacks',
+      'cat-bev-grid':     'Beverages',
+      'cat-bakery-grid':  'Bakery',
+    };
+    Object.entries(map).forEach(([gridId, cat]) => {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+      const items = products.filter(p => p.cat === cat).slice(0, 4);
+      grid.innerHTML = items.map(renderProductCard).join('');
+    });
+    observeReveal();
+
+    // Handle URL fragment (anchor links from home)
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 400);
+    }
+  });
+</script>
+</body>
+</html>

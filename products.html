@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — GArocery Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="loader-logo">GA<span>rocery</span> Store</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">🛒</div>GA<span>rocery</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <input type="text" placeholder="Search groceries…" id="nav-search" />
+        <button onclick="navSearch()">🔍</button>
+      </div>
+      <a href="cart.html" class="cart-btn">
+        🛒 Cart <span class="cart-count">0</span>
+      </a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="products.html">🛍️ Products</a>
+    <a href="categories.html">📦 Categories</a>
+    <a href="about.html">ℹ️ About Us</a>
+    <a href="contact.html">📩 Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> › <span>Products</span>
+    </div>
+    <h1>🛍️ All Products</h1>
+    <p>Fresh, organic groceries sourced from the best farms</p>
+  </div>
+</div>
+
+<!-- PRODUCTS LAYOUT -->
+<div class="container">
+  <div class="products-layout">
+
+    <!-- SIDEBAR FILTERS -->
+    <aside class="filter-sidebar reveal">
+      <h3>🎛️ Filters</h3>
+
+      <!-- Category -->
+      <div class="filter-group">
+        <h4>Category</h4>
+        <div class="filter-check">
+          <label><input type="checkbox" class="cat-filter-check" value="Fruits" /> 🍎 Fruits</label>
+          <label><input type="checkbox" class="cat-filter-check" value="Vegetables" /> 🥦 Vegetables</label>
+          <label><input type="checkbox" class="cat-filter-check" value="Dairy" /> 🥛 Dairy</label>
+          <label><input type="checkbox" class="cat-filter-check" value="Snacks" /> 🍫 Snacks</label>
+          <label><input type="checkbox" class="cat-filter-check" value="Beverages" /> 🧃 Beverages</label>
+          <label><input type="checkbox" class="cat-filter-check" value="Bakery" /> 🍞 Bakery</label>
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="filter-group">
+        <h4>Max Price</h4>
+        <div class="price-range">
+          <input type="range" id="price-range" min="20" max="500" value="500" step="5" />
+          <div class="price-labels">
+            <span>₹20</span>
+            <span>Up to <strong id="price-max-lbl">₹500</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badge filter -->
+      <div class="filter-group">
+        <h4>Offers</h4>
+        <div class="filter-check">
+          <label><input type="checkbox" class="badge-filter-check" value="sale" /> 🔖 On Sale</label>
+          <label><input type="checkbox" class="badge-filter-check" value="new" /> 🆕 New Arrivals</label>
+        </div>
+      </div>
+
+      <button class="clear-filters" onclick="clearFilters()">✕ Clear All Filters</button>
+    </aside>
+
+    <!-- MAIN PRODUCTS -->
+    <main class="products-main">
+      <div class="products-toolbar">
+        <span class="products-count" id="product-count">Loading…</span>
+        <div class="search-products">
+          <input type="text" id="product-search" placeholder="Search products…" />
+          <button>🔍</button>
+        </div>
+        <select class="sort-select" id="sort-select">
+          <option value="default">Sort: Default</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="name-asc">Name: A → Z</option>
+        </select>
+      </div>
+      <div class="products-grid" id="all-products-grid">
+        <!-- JS renders here -->
+      </div>
+    </main>
+
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <h2>Get Fresh Deals in Your Inbox</h2>
+    <p>Subscribe for weekly offers and new arrivals</p>
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" placeholder="Your email…" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <div id="newsletter-msg"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><div class="logo-icon">🛒</div>GA<span>rocery</span></a>
+        <p>Fresh organic groceries. Farm to doorstep in 30 minutes.</p>
+        <div class="social-links">
+          <a href="#">📘</a><a href="#">📷</a><a href="#">🐦</a><a href="#">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.1);padding:1.25rem 0">
+    <div class="container footer-bottom">
+      <span>© 2025 GArocery Store. All rights reserved.</span>
+      <span>Made with 💚 for fresh food lovers</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function navSearch() {
+    const q = document.getElementById('nav-search').value.trim();
+    if (q) {
+      document.getElementById('product-search').value = q;
+      searchQuery = q;
+      renderAllProducts();
+    }
+  }
+  document.getElementById('nav-search').addEventListener('keydown', e => {
+    if (e.key === 'Enter') navSearch();
+  });
+
+  // Handle URL params (from home page search)
+  const params = new URLSearchParams(window.location.search);
+  const qParam = params.get('q');
+  if (qParam) {
+    document.addEventListener('DOMContentLoaded', () => {
+      const si = document.getElementById('product-search');
+      if (si) { si.value = qParam; searchQuery = qParam; renderAllProducts(); }
+    });
+  }
+
+  function clearFilters() {
+    document.querySelectorAll('.cat-filter-check, .badge-filter-check').forEach(cb => cb.checked = false);
+    activeFilters = [];
+    searchQuery = '';
+    sortOrder = 'default';
+    maxPriceFilter = 500;
+    const priceRange = document.getElementById('price-range');
+    if (priceRange) { priceRange.value = 500; priceRange.style.background=''; }
+    const priceLbl = document.getElementById('price-max-lbl');
+    if (priceLbl) priceLbl.textContent = '₹500';
+    const sortSel = document.getElementById('sort-select');
+    if (sortSel) sortSel.value = 'default';
+    const searchEl = document.getElementById('product-search');
+    if (searchEl) searchEl.value = '';
+    renderAllProducts();
+  }
+</script>
+</body>
+</html>
